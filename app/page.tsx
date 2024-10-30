@@ -7,12 +7,13 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import Input from "@/components/ui/input";
 import Link from "next/link";
 import { LuHome, LuLoader2 } from "react-icons/lu";
 
 export default function Home() {
   return (
-    <div className="grid grid-cols-5 p-10">
+    <div className="grid grid-cols-4 gap-10 p-10 sm:grid-cols-2">
       <Card>
         <CardHeader>
           <CardTitle>Button</CardTitle>
@@ -80,6 +81,25 @@ export default function Home() {
             View doc
           </Link>
         </CardFooter>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>Input</CardTitle>
+          <CardDescription>
+            Displays an input field for users to enter data.
+          </CardDescription>
+          <CardBody>
+            <div className="flex max-w-64 flex-col gap-3 py-5">
+              <p>Size</p>
+              <Input size={"sm"} placeholder="small" />
+              <Input size="md" placeholder="medium" />
+              <Input size="lg" placeholder="large" />
+              <p>With Button</p>
+              <Input withButton size={"md"} placeholder="with button" />
+            </div>
+          </CardBody>
+        </CardHeader>
       </Card>
     </div>
   );
